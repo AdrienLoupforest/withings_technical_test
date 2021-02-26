@@ -5,6 +5,7 @@ import axios from 'axios';
 
 const Home = () => {
     const [breads, setBreads] = useState([])
+    const [searchBread, setSearchBread] = useState('aaa')
 
     useEffect(()=> {
         axios.get('https://api.thecatapi.com/v1/breeds').then(
@@ -16,11 +17,16 @@ const Home = () => {
         })
     })
 
+    function HandleSeachBreadChange(event) {
+        setSearchBread(event.target.value);
+    }
+
 
     return (
         <div>
            <h2>Liste des races de chats</h2>
-           <Breads breads={breads}></Breads>
+           <input value={searchBread} type="text" onChange={HandleSeachBreadChange}></input>
+           <Breads breads={breads} searchBread={searchBread}></Breads>
         </div>
     );
 };
