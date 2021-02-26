@@ -1,11 +1,11 @@
-import React from "react";
-import './bread.css'
+import React from 'react';
+import './Bread.css';
 
-const Bread = ({id, name}) => {
+const Bread = ({ id, name }) => {
     return (
-           <div key={id} className='bread'>
-               {name}
-           </div>
+        <div key={id} className="bread">
+            {name}
+        </div>
     );
 };
 
