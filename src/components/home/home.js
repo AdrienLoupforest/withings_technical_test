@@ -15,7 +15,7 @@ const Home = () => {
             .catch((err) => {
                 console.log(err);
             });
-    });
+    }, []);
 
     function HandleSeachBreadChange(event) {
         setSearchBread(event.target.value);

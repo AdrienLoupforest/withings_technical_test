@@ -1,6 +1,9 @@
 import React from 'react';
 import Bread from './Bread';
 import './Breads.css';
+import {
+    Link,
+} from 'react-router-dom';
 
 const Breads = ({ breads, searchBread }) => {
     return (
@@ -10,7 +13,9 @@ const Breads = ({ breads, searchBread }) => {
                     bread.name.toLowerCase().includes(searchBread.toLowerCase())
                 )
                 .map((bread) => (
-                    <Bread key={bread.id} name={bread.name} />
+                    <Link to={`bread/${bread.id}`}>
+                        <Bread key={bread.id} name={bread.name} />
+                    </Link>
                 ))}
         </div>
     );
