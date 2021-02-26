@@ -9,7 +9,6 @@ const Home = () => {
     useEffect(()=> {
         axios.get('https://api.thecatapi.com/v1/breeds').then(
             res => {
-                console.log(res)
                 setBreads(res.data)
             }
         ).catch(err => {
